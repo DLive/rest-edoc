@@ -1,0 +1,14 @@
+ebin/
+/*.html
+/*.png
+/*.css
+edoc-info
+deps/
+.rebar/
+.eunit
+.jiffy.dev
+*.app
+*.beam
+*.o
+*.so
+*.d

@@ -1,0 +1,12 @@
+{application, rest_edoc,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { rest_edoc_app, []}},
+  {env, []}
+ ]}.
