@@ -60,4 +60,11 @@
 %% @definition 名称 类型
 
 ### 参考示例
-example/example_req.erl
+```
+cd doc_example
+rebar get-deps
+rebar compile
+rebar redoc 
+./test.sh
+open http://127.0.0.1:7080/index.html
+```
