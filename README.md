@@ -68,3 +68,5 @@ rebar redoc
 ./test.sh
 open http://127.0.0.1:7080/index.html
 ```
+#### Result
+![image](https://github.com/DLive/rest-edoc/blob/master/example.jpg)
