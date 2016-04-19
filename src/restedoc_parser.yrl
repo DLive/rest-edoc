@@ -288,7 +288,7 @@ Erlang code.
 -export([parse_spec/2, parse_typedef/2, parse_throws/2, parse_ref/2,
 	 parse_see/2, parse_param/2]).
 
--include("edoc_types.hrl").
+-include("restedoc_types.hrl").
 
 %% Multiple entry point hack:
 
