@@ -21,9 +21,9 @@
 %% @definition Productabc object
 %% @propertie id=200 type=string description=descriptiondescriptiondescription
 %% @propertie id=ref_other type=array items_$ref=Activity
-cloudi_service_init() ->
+init() ->
     
-    {ok, #state{prefix=Prefix,dispatcher=Dispatcher }}.
+    {ok, #state{}}.
 
 
 %% @path /{wxid}/wx
@@ -54,4 +54,4 @@ process_request("wx/get",WeAppid,RequestInfo, Request,_Timeout) ->
 %% @responses id=default type=schema  schema_$ref=Productabc description=description
 
 process_request("wx/post",WeAppid,_RequestInfo, Request,_Timeout) ->
-    ok;
+    ok.

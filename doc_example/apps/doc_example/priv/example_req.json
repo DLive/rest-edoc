@@ -1,0 +1,155 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "对接微信公众平台接口",
+    "version" : "1.0.0",
+    "title" : "微信接口"
+  },
+  "host" : "isobig.com",
+  "basePath" : "/wechat",
+  "schemes" : [
+    [
+      "http"
+    ]
+  ],
+  "tags" : [
+    {
+      "name" : "wechat2",
+      "description" : "微信私有"
+    },
+    {
+      "name" : "wechat",
+      "description" : "微信公用"
+    }
+  ],
+  "paths" : {
+    "/{wxid}/wx" : {
+      "post" : {
+        "tags" : [
+          "wechat"
+        ],
+        "summary" : "公众号认证接口.",
+        "description" : "公众号认证接口,需要传递公众号ID",
+        "operationId" : "wechat_/{wxid}/wxpost",
+        "consumes" : [
+          "application/json",
+          "application/xml"
+        ],
+        "produces" : [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters" : [
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "wxid",
+            "in" : "path",
+            "format" : "string",
+            "description" : "微信公众号ID"
+          },
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "wxcontent",
+            "in" : "body",
+            "format" : "string",
+            "description" : "传递消息内容"
+          }
+        ],
+        "responses" : {
+          "default" : {
+            "type" : "schema",
+            "schema" : {
+              "$ref" : "#/definitions/Productabc"
+            },
+            "description" : "description"
+          }
+        }
+      },
+      "get" : {
+        "tags" : [
+          "wechat"
+        ],
+        "summary" : "公众号认证接口.",
+        "description" : "公众号认证接口,需要传递公众号ID",
+        "operationId" : "wechat_/{wxid}/wxget",
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "wxid",
+            "in" : "path",
+            "format" : "string",
+            "description" : "微信公众号ID"
+          },
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "echostr",
+            "in" : "query",
+            "format" : "string",
+            "description" : "输出字符串",
+            "default" : "defaultValue"
+          },
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "signature",
+            "in" : "query",
+            "format" : "string",
+            "description" : "签名"
+          },
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "timestamp",
+            "in" : "query",
+            "format" : "string",
+            "description" : "时间戳"
+          },
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "nonce",
+            "in" : "query",
+            "format" : "string",
+            "description" : "nonce"
+          }
+        ],
+        "responses" : {
+          "default" : {
+            "type" : "schema",
+            "schema" : {
+              "$ref" : "#/definitions/Productabc"
+            },
+            "description" : "description"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Productabc" : {
+      "type" : "object",
+      "properties" : {
+        "ref_other" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Activity"
+          }
+        },
+        "200" : {
+          "type" : "string",
+          "description" : "descriptiondescriptiondescription"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{application, doc_example,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { doc_example_app, []}},
+  {env, []}
+ ]}.

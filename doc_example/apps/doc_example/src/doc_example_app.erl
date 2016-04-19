@@ -1,4 +1,4 @@
--module(rest_edoc_app).
+-module(doc_example_app).
 
 -behaviour(application).
 
@@ -10,7 +10,7 @@
 %% ===================================================================
 
 start(_StartType, _StartArgs) ->
-	rest_edoc_sup:start_link().
+    doc_example_sup:start_link().
 
 stop(_State) ->
     ok.

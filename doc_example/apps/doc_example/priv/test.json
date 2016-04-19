@@ -1,0 +1,67 @@
+
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "asdfasdfa",
+    "version" : "1.0",
+    "title" : "apidoc"
+  },
+  "host" : "isobig.com",
+  "basePath" : "v1/",
+  "tags" : [
+    {
+      "name" : "user",
+      "description" : "abc"
+    }
+  ],
+  "tags" : [
+    {
+      "name" : "user",
+      "description" : "abc"
+    },
+    {
+      "name" : "account",
+      "description" : "fa"
+    }
+  ],
+  "schemes" : [
+    [
+      "http"
+    ]
+  ],
+  "paths" : {
+    "pet" : {
+      "get" : {
+        "tags" : [
+          "user"
+        ],
+        "summary" : "desafa",
+        "description" : "asdfasdfafa",
+        "operationId" : "adduser",
+        "consumes" : [
+          "application/json",
+          "application/xml"
+        ],
+        "produces" : [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters" : [
+          {
+            "in" : "query",
+            "name" : "username",
+            "type": "string",
+
+            "description" : "sdfasdfaf",
+            "required" : true
+          }
+        ],
+        "responses" : {
+          "404" : {
+            "description" : "4044444444"
+          }
+        }
+      }
+    }
+  }
+}

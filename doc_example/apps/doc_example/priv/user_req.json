@@ -1,0 +1,182 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "对接用户相关操作，用户基础信息管理，微信用户管理，用户组管理，会话管理，登录",
+    "version" : "1.0.0",
+    "title" : "用户相关"
+  },
+  "host" : "localhost:7080",
+  "basePath" : "/user",
+  "schemes" : [
+    [
+      "http"
+    ]
+  ],
+  "tags" : [
+    {
+      "name" : "cache",
+      "description" : "缓存操作"
+    },
+    {
+      "name" : "group",
+      "description" : "用户组管理"
+    },
+    {
+      "name" : "user",
+      "description" : "用户基础"
+    },
+    {
+      "name" : "login",
+      "description" : "登录操作"
+    },
+    {
+      "name" : "wechat",
+      "description" : "微信基础"
+    },
+    {
+      "name" : "session",
+      "description" : "会话操作"
+    }
+  ],
+  "paths" : {
+    "/session" : {
+      "put" : {
+        "tags" : [
+          "session"
+        ],
+        "summary" : "修改会话信息.",
+        "description" : "修改会话信息,将新值替换旧值",
+        "operationId" : "session_/sessionput",
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "token",
+            "in" : "header",
+            "format" : "string",
+            "description" : "用户会话标识",
+            "default" : "2415901612564febbcc3cb63d2b155a7"
+          },
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "content",
+            "in" : "body",
+            "format" : "string",
+            "description" : "内容值"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "type" : "object",
+            "description" : "返回设置内容"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [
+          "session"
+        ],
+        "summary" : "创建会话信息.",
+        "description" : "创建会话信息",
+        "operationId" : "session_/sessionpost",
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "token",
+            "in" : "header",
+            "format" : "string",
+            "description" : "用户会话标识",
+            "default" : "2415901612564febbcc3cb63d2b155a7"
+          },
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "content",
+            "in" : "body",
+            "format" : "string",
+            "description" : "内容值"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "type" : "object",
+            "description" : "返回设置内容"
+          }
+        }
+      },
+      "get" : {
+        "tags" : [
+          "session"
+        ],
+        "summary" : "获取会话信息.",
+        "description" : "获取会话信息",
+        "operationId" : "session_/sessionget",
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "type" : "string",
+            "required" : "true",
+            "name" : "token",
+            "in" : "header",
+            "format" : "string",
+            "description" : "用户会话标识",
+            "default" : "2415901612564febbcc3cb63d2b155a7"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "type" : "object",
+            "description" : "返回设置内容"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "registerinfo" : {
+      "type" : "object",
+      "properties" : {
+        "username" : {
+          "type" : "string",
+          "description" : "用户名"
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "密码"
+        }
+      }
+    },
+    "commont_result" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string",
+          "description" : "返回消息内容"
+        },
+        "code" : {
+          "type" : "integer",
+          "description" : "状态码"
+        }
+      }
+    }
+  }
+}
