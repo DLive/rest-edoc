@@ -1,0 +1,3 @@
+*.js linguist-language=erlang
+*.css linguist-language=erlang
+*.html linguist-language=erlang
