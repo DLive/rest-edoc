@@ -195,14 +195,15 @@ application(App, Dir, Options) when is_atom(App) ->
     Src = restedoc_lib:try_subdir(Dir, ?SOURCE_DIR),
     Overview = filename:join(edoc_lib:try_subdir(Dir, ?EDOC_DIR),
 			     ?OVERVIEW_FILE),
-
+    Includes = [filename:join(Dir, "include")],
+    RedocDir = get_redoc_dir(Dir,Options),
     Opts = Options ++ [{source_path, [Src]},
 		       subpackages,
 		       {title, io_lib:fwrite("The ~s application", [App])},
 		       {overview, Overview},
 		       {dir, filename:join(Dir, ?EDOC_DIR)},
-               {redoc_dir,get_redoc_dir(Dir,Options)},
-		       {includes, [filename:join(Dir, "include")]}],
+               {redoc_dir,RedocDir},
+		       {includes, Includes}],
     Opts1 = set_app_default(App, Dir, Opts),
     %% Recursively document all subpackages of '' - i.e., everything.
     run([], [{application, App} | Opts1]).
