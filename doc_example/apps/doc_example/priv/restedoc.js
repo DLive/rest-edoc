@@ -101,7 +101,7 @@ MoudleList.prototype={
        	 window.SwaggerTranslator.translate();
       	}
       	var sw  = new SwaggerUi({
-	        url: "http://isobig.com/static/"+MoudleName+".json",
+	        url: "http://127.0.0.1:7080/"+MoudleName+".json",
 	        dom_id: "swagger-ui-container",
 	        supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
 	        onComplete: function(swaggerApi, swaggerUi){
@@ -135,6 +135,6 @@ MoudleList.prototype={
 }
 $(function () {
 	$('#input_apiKey').change(addApiKeyAuthorization);
-	new MoudleList({url:"/static/modulelist.json"});
+	new MoudleList({url:"/modulelist.json"});
 
 });
